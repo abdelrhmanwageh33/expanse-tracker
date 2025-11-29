@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playwrite+US+Trad+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./font/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    
+
+<section class="table my-4 py-3 bg-transparent">
+    <div class="container">
+        <div class="table-head  ">
+            <h3 class="">Expans Tracker</h3>
+            <div class="search-btn   d-lg-flex  g-2">
+                <input type="text" class="form-control search my-3 mx-auto p-1 w-75" id="floatingInputValue" placeholder="Search Expense title here..." value="">
+                <button class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#expenseModal" data-bs-whatever="@getbootstrap">Add New</button>
+                        <button type="button   " class="btn btn-success  mx-1 " data-bs-toggle="modal" data-bs-target="#incomeModal" data-bs-whatever="@mdo" >Enter your Total Income</button>
+
+              </div>
+
+<div class="modal fade" id="incomeModal" tabindex="-1" aria-labelledby="incomeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="incomeModalLabel">Happy month</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Enter your Total Income:</label>
+            <input type="text" class="form-control incomeInput" id="recipient-name" >
+          </div>
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary sumIncome addExpanseBtn" data-bs-dismiss="modal" aria-label="Close">add income</button>
+              <button type="button" class="btn btn-success d-none updateExpanseBtn " data-bs-dismiss="modal" aria-label="Close">update income</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+    </div>
+<div class="table my-3 p-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="income p-3 text-center rounded-3 text-white">
+          
+          <div class="d-flex align-items-center justify-content-center">
+            <h3 class="text-center mx-5">Your Total income</h3>
+           <span><i class="fa-solid fa-trash text-danger " id="deleteTotalIncome" ></i> 
+         <i class="fa-regular fa-pen-to-square text-warning" id="updateExpanse" data-bs-toggle="modal" data-bs-target="#incomeModal" data-bs-whatever="@mdo"></i> </span>
+          </div>
+          <h4 class="totalIncome">$</h4>
+          
+        </div>
+        
+      </div>
+       <div class="col-lg-4">
+        <div class="expense p-3 text-center rounded-3 text-white">
+          <h3>Your Total expense</h3>
+          <h4 class="expenseAmount">$</h4>
+        </div>
+        
+      </div>
+       <div class="col-lg-4">
+        <div class="cash p-3 text-center rounded-3 text-white">
+          <h3>Your Total cash on hand</h3>
+          <h4 class="cashOnHand">$</h4>
+        </div>
+        
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="expenseModal" tabindex="-1" aria-labelledby="expenseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="expenseModalLabel">New message</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="text-capitalize">
+         
+          <div class="mb-3">
+            <label for="id-name" class="col-form-label">title:</label>
+            <input type="text" class="form-control" id="title-name" oninput="valideInput(this,'title-msg')">
+            <p class="text-center text-danger d-none" id="title-msg">invalid title</p>
+          </div>
+              <div class="mb-3">
+            <label for="amount-name" class="col-form-label">amount:</label>
+            <input type="text" class="form-control" id="amount-name" oninput="valideInput(this,'amount-msg')">
+             <p class="text-center text-danger d-none" id="amount-msg">invalid amount</p>
+          </div>
+              <div class="mb-3">
+            <label for="category-name" class="col-form-label">category:</label>
+            <input type="text" class="form-control" id="category-name" list="data">
+            <datalist id="data">
+              <option value="">All</option>
+      <option value="مواصلات">
+    <option value="أكل">
+    <option value="سكن">
+    <option value="ترفيه">
+    <option value="تعليم">
+    <option value="صيدلية / أدوية">
+    <option value="ملابس">
+    <option value="Utilities / فواتير">
+    <option value="Other / أخرى">
+  </datalist>
+          </div>
+              <div class="mb-3">
+            <label for="date-name" class="col-form-label">date:</label>
+            <input type="date" class="form-control" id="date-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+        <button type="button" class="btn btn-primary" id="addButton"  data-bs-dismiss="toast" data-bs-dismiss="modal" aria-label="Close">Add Exxpense</button>
+                <button type="button" class="btn btn-success d-none" id="updateButton" data-bs-dismiss="modal">Update message</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card my-4 py-4">
+<div class="container">
+    <!-- Expense Table -->
+<table id="expenses" style="width:100%; border-collapse:collapse; font-family:Arial, sans-serif;">
+  <thead>
+    <tr class="text-capitalize">
+      <th>id</th>
+      <th >title</th>
+      <th >amount</th>
+      <th >category </th> 
+      <th >date</th>
+      <th >Action</th>
+
+    </tr>
+  </thead>
+  
+  
+    <tbody id="expense-body"></tbody>
+</table>
+
+</div>
+
+
+</div>
+<div class="my-3 d-flex gap-2 align-items-center justify-content-center">
+  <label for="categoryFilter" class="form-label mb-0 fw-bold">Filter by Category:</label>
+  <select id="categoryFilter" class="form-select w-auto">
+    <option value="">All</option>
+    <option value="مواصلات">مواصلات</option>
+    <option value="أكل">أكل</option>
+    <option value="سكن">سكن</option>
+    <option value="ترفيه">ترفيه</option>
+    <option value="تعليم">تعليم</option>
+    <option value="صيدلية / أدوية">صيدلية / أدوية</option>
+    <option value="ملابس">ملابس</option>
+    <option value="Utilities / فواتير">Utilities / فواتير</option>
+  </select>
+</div>
+</section>
+<!-- Toast Container -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+  <div id="action-toast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toast-message">
+        Default message
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="./js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./js/main.js"></script>  
+</body>
+</html>

@@ -1,0 +1,50 @@
+body{
+    font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  
+}
+*{
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+th{
+    text-align:left;
+     padding:12px;
+      border-bottom:1px solid#e5e7eb
+}
+.income{
+    background: #3B76EF;
+}
+.expense{
+    background-color: #63C7FF;
+}
+.cash{
+    background: #A66DD4;
+}
+.inner{
+    
+    border-radius: 50%;
+    box-shadow: #e5e7eb;
+   
+    width: 200px;
+    height: 200px;
+    text-align: center;
+
+    background: conic-gradient(purple 0% 10%, #e5e7eb 90% 100%);
+
+}
+.most-categery,.less-categery{
+    
+    border-radius: 50%;
+    box-shadow: #e5e7eb;
+    width: 200px;
+    height: 200px;
+  
+background: radial-gradient(closest-side, white 78%, transparent 79% 100%); ;
+    text-align: center;
+    
+}
+
+
