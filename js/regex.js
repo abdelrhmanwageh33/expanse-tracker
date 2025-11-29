@@ -5,7 +5,7 @@ export function valideInput(inputName ,msg){
 let text=inputName.value;
 let message=document.getElementById(msg)
 let regex = {
-     "title-name": /^(?=.*[\p{Script=Arabic}\p{Latin}\p{Nd}])[\p{Script=Arabic}\p{Latin}\p{Nd}\p{P}\s]+$/u,
+     "title-name": /^(?=.*[A-Za-z\u0600-\u06FF])[A-Za-z\u0600-\u06FF0-9\s.,!?_\-]+$/,
   "amount-name": /^[1-9]\d*$/
 
 
