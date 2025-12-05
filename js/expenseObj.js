@@ -47,7 +47,6 @@ console.log(allAmount);
 
 
 export function clearForm(){
-
     titleName.value=null,
      categoryName.value=null,
     amountName.value=null,

@@ -1,8 +1,7 @@
-import {addButton, cash, categoryFilter, searchInput, sumIncome, total, updateExpanseBtn } from "./init.js";
+import {addButton, cash, categoryFilter, searchInput,  total, updateButton } from "./init.js";
 
 import { addExpense, clearForm } from "./expenseObj.js";
 import { updateExpanse } from "./updateData.js";
-import {    displaytotalIncome } from "./totalIncom.js";
 import { sumAmount } from "./sumAmount.js";
 import { searchAndFilter } from "./search.js";
 

@@ -1,4 +1,4 @@
-import { addExpanseBtn, cash, categoryFilter, deleteIncome, incomeInput, sumIncome, total, totalIncome, totalIncomInput, updateExpanse, updateExpanseBtn } from "./init.js";
+import { addExpanseBtn, cash,  deleteIncome, incomeInput, sumIncome, total, totalIncome, totalIncomInput, updateExpanse, updateExpanseBtn } from "./init.js";
 import { sumAmount } from "./sumAmount.js";
 
 
@@ -13,6 +13,7 @@ export function displaytotalIncome() {
     totalIncome.innerHTML = total;
 
   cash.innerHTML=total-sumAmount
+
 
  
 }
@@ -48,5 +49,4 @@ deleteIncome.addEventListener('click',function(){
 
 })
 
-cash.innerHTML=total-sumAmount
 
